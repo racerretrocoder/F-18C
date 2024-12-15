@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>pylons.ac</path>
+
+
+
+  <!--station left 1 -->
+  <animation>
+    <type>select</type>
+        <object-name>pylon1.L</object-name>
+    <object-name>pylon2.L</object-name>
+    <object-name>pylon3.L</object-name>
+    
+    <object-name>pylon3.R</object-name>
+    <object-name>pylon2.R</object-name>
+    <object-name>pylon1.R</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/int[17]</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+<model>
+    <name>left-Droptank</name>
+    <path>Aircraft/F-22/Models/loads/Tank.xml</path>
+    <offsets>
+      <x-m> 2.05  </x-m>
+      <y-m> -3.1 </y-m>
+      <z-m> -1.5 </z-m>
+      <pitch-deg> 0.0 </pitch-deg>
+    </offsets>
+  </model>	
+
+<model>
+    <name>right-Droptank</name>
+    <path>Aircraft/F-22/Models/loads/Tank.xml</path>
+    <offsets>
+      <x-m> 2.05  </x-m>
+      <y-m> 3.1 </y-m>
+      <z-m> -1.5 </z-m>
+      <pitch-deg> 0.0 </pitch-deg>
+    </offsets>
+  </model>	
+
+  <animation>
+    <type>select</type>
+    <object-name>left-Droptank</object-name>      
+    <condition>
+
+        <equals>
+          <property>sim/multiplay/generic/int[19]</property>
+          <value>1</value>
+        </equals>
+
+    </condition>
+	 
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>right-Droptank</object-name>      
+    <condition>
+
+        <equals>
+          <property>sim/multiplay/generic/int[18]</property>
+          <value>1</value>
+        </equals>
+
+    </condition>
+	 
+  </animation>
+
+
+</PropertyList>

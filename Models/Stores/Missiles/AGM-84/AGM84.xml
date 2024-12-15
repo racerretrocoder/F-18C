@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<!-- R-27R                                      -->
+<!-- Sergey "Mercenary_Mercury" Salov, Dec 2012 -->
+
+<PropertyList>
+
+ <path>AGM-84.ac</path>
+
+<effect>
+ <inherits-from>Effects/model-transparent</inherits-from>
+<object-name>FlameModel</object-name>
+</effect>
+
+ <model>
+  <name>AIM-120smokesmall</name>
+  <path>Aircraft/F-18C/Models/smoke/smoke3.xml</path>
+  <offsets>
+   <x-m>0.0</x-m>
+   <y-m>0.0  </y-m>
+   <z-m>0.0  </z-m>
+  </offsets>
+ </model>
+  <animation>
+    <type>dist-scale</type>
+    <object-name>AIM-120</object-name>
+    <interpolation>
+      <entry><ind>    0 </ind><dep> 0 </dep></entry>
+      <entry><ind>   300 </ind><dep> 1 </dep></entry>
+      <entry><ind> 1500 </ind><dep> 2 </dep></entry>
+    </interpolation>
+  </animation>
+
+</PropertyList>
