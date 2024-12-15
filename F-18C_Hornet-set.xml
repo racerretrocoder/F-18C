@@ -30,7 +30,7 @@
   </sound>
 
   <model>
-   <path>Aircraft/F-18C/Models/F-18C.xml</path>
+   <path>Aircraft/F-18C/Models/FA-18.xml</path>
   </model>
 
   <submodels> 
