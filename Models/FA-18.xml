@@ -4,13 +4,7 @@
 
  <path>F-18.ac</path>
  
- <animation>
-        <type>range</type>
-        <min-m>0</min-m>
-        <max-m>20000</max-m>
-    </animation>
- 
- <!-- MP sound call -->
+
   <sound><path>Aircraft/F-18C/Sounds/mp-sound.xml</path></sound>
   
   <nasal>
@@ -1397,22 +1391,22 @@ if(navStillOn) {
 	
   <!-- Gauche -->
   <model>
-    <path>Aircraft/F-18C/Models/Effects/tiptrail/tiptrail.xml</path>
+    <path>Aircraft/F-18C/Models/Effects/tiptrail/tiptrailL.xml</path>
     <offsets>
       <x-m>  2.2 </x-m>
       <y-m> -5.9 </y-m>
-      <z-m> 0.5</z-m>
+      <z-m> 0.25</z-m>
 
     </offsets>
   </model>
 
   <!-- Droite -->
   <model>
-    <path>Aircraft/F-18C/Models/Effects/tiptrail/tiptrail.xml</path>
+    <path>Aircraft/F-18C/Models/Effects/tiptrail/tiptrailR.xml</path>
     <offsets>
       <x-m>  2.2 </x-m>
       <y-m> 5.9 </y-m>
-      <z-m> 0.5</z-m>
+      <z-m> 0.25</z-m>
 
     </offsets>
   </model>
@@ -1507,36 +1501,145 @@ if(navStillOn) {
  </animation>
  
  <model>
-		<path>Aircraft/F-18C/Models/Effects/Vapour/Vapour.xml</path>
+  <name>boom</name>
+  <path>Aircraft/F-18C/Models/Effects/vapour/mach-cone.xml</path>
+  <offsets>
+   <x-m>1.9</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+
+   <heading-deg>0</heading-deg>
+  </offsets>
+ </model>
+ <model>
+   <name>left-strake-vortex</name>
+		<path>Aircraft/F-18C/Models/Effects/Vapour/strake-vortex.xml</path>
 		<offsets>
-			<x-m>-2.71723</x-m>
-			<y-m>0</y-m>
-			<z-m>0.359822</z-m>
+			<x-m>-3.01723</x-m>
+			<y-m>-0.6</y-m>
+			<z-m>0.459822</z-m>
 			<roll-deg>0</roll-deg>
 			<pitch-deg>0</pitch-deg>
-			<heading-deg>0</heading-deg>
+			<heading-deg>-6</heading-deg>
 		</offsets>
 	</model>
-	
-	<model>
-		<path>Aircraft/F-18C/Models/Effects/Vapour/Vapour2.xml</path>
+	 <model>
+     <name>right-strake-vortex</name>
+		<path>Aircraft/F-18C/Models/Effects/Vapour/strake-vortex.xml</path>
 		<offsets>
-			<x-m>2</x-m>
-			<y-m>-2</y-m>
-			<z-m>0.5</z-m>
+			<x-m>-3.01723</x-m>
+			<y-m>0.6</y-m>
+			<z-m>0.459822</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>6</heading-deg>
+		</offsets>
+	</model>
+   <model>
+   <name>left-strake-vortex2</name>
+		<path>Aircraft/F-18C/Models/Effects/Vapour/strake-vortex.xml</path>
+		<offsets>
+			<x-m>-3.00723</x-m>
+			<y-m>-0.75</y-m>
+			<z-m>0.459822</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>-6</heading-deg>
+		</offsets>
+	</model>
+	 <model>
+     <name>right-strake-vortex2</name>
+		<path>Aircraft/F-18C/Models/Effects/Vapour/strake-vortex.xml</path>
+		<offsets>
+			<x-m>-3.00723</x-m>
+			<y-m>0.75</y-m>
+			<z-m>0.459822</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>6</heading-deg>
+		</offsets>
+	</model>
+ <animation>
+    <type>select</type>
+    <object-name>boom</object-name>
+
+    <condition>
+       <and>
+    
+          <greater-than>
+           <property>sim/multiplay/generic/float[30]</property>
+           <value>0.85</value>
+          </greater-than>
+          <less-than>
+           <property>sim/multiplay/generic/float[30]</property>
+           <value>1</value>
+          </less-than>
+       </and>
+    </condition>
+  </animation> 
+ <animation>
+    <type>select</type>
+    <object-name>right-strake-vortex</object-name>
+    <object-name>left-strake-vortex</object-name>
+    <object-name>right-strake-vortex2</object-name>
+    <object-name>left-strake-vortex2</object-name>
+
+    <condition>
+       <and>
+    
+          <greater-than>
+           <property>sim/multiplay/generic/float[20]</property>
+           <value>7</value>
+          </greater-than>
+          <greater-than>
+           <property>sim/multiplay/generic/float[19]</property>
+           <value>130</value>
+          </greater-than>
+       </and>
+    </condition>
+  </animation> 
+	<model>
+     <name>leftvap</name>
+		<path>Aircraft/F-18C/Models/Effects/Vapour/g-vortex.xml</path>
+		<offsets>
+			<x-m>1.6</x-m>
+			<y-m>-2.4</y-m>
+			<z-m>0.3</z-m>
 			<pitch-deg>0</pitch-deg>
 		</offsets>
 	</model> 
 	
 	<model>
-		<path>Aircraft/F-18C/Models/Effects/Vapour/Vapour2.xml</path>
+       <name>rightvap</name>
+		<path>Aircraft/F-18C/Models/Effects/Vapour/g-vortex.xml</path>
 		<offsets>
-			<x-m>2</x-m>
-			<y-m>2</y-m>
-			<z-m>0.5</z-m>
+			<x-m>1.6</x-m>
+			<y-m>2.4</y-m>
+			<z-m>0.3</z-m>
 			<pitch-deg>0</pitch-deg>
 		</offsets>
 	</model> 
+
+   <animation>
+    <type>select</type>
+    <object-name>rightvap</object-name>
+    <object-name>leftvap</object-name>
+
+
+    <condition>
+       <and>
+    
+          <greater-than>
+           <property>sim/multiplay/generic/float[20]</property>
+           <value>10</value>
+          </greater-than>
+          <greater-than>
+           <property>sim/multiplay/generic/float[19]</property>
+           <value>250</value>
+          </greater-than>
+       </and>
+    </condition>
+  </animation> 
 
  <!-- Nozzles -->
   
@@ -2081,7 +2184,73 @@ if(navStillOn) {
 </condition>
 </animation> 
 
+<!--Maverick-->
 
+<!--Harpoon-->
+<animation>
+    <type>select</type>
+    <object-name>AGM-651</object-name>      
+    <condition>
+    <and>
+    <equals>
+    <property>sim/multiplay/generic/string[11]</property>
+    <value>AGM-65</value>
+    </equals>
+    <equals>
+    <property>sim/multiplay/generic/bool[11]</property>
+    <value>false</value>
+    </equals>
+    </and>
+    </condition>
+    </animation> 
+    <animation>
+    <type>select</type>
+    <object-name>AGM-652</object-name>      
+    <condition>
+    <and>
+    <equals>
+    <property>sim/multiplay/generic/string[12]</property>
+    <value>AGM-65</value>
+    </equals>
+    <equals>
+    <property>sim/multiplay/generic/bool[12]</property>
+    <value>false</value>
+    </equals>
+    </and>
+    </condition>
+    </animation> 
+    <animation>
+    <type>select</type>
+    <object-name>AGM-654</object-name>      
+    <condition>
+    <and>
+    <equals>
+    <property>sim/multiplay/generic/string[30]</property>
+    <value>AGM-65</value>
+    </equals>
+    <equals>
+    <property>sim/multiplay/generic/bool[30]</property>
+    <value>false</value>
+    </equals>
+    </and>
+    </condition>
+    </animation> 
+    <animation>
+    <type>select</type>
+    <object-name>AGM-653</object-name>         
+    <condition>
+    <and>
+    <equals>
+    <property>sim/multiplay/generic/string[20]</property>
+    <value>AGM-65</value>
+    </equals>
+    <equals>
+    <property>sim/multiplay/generic/bool[20]</property>
+    <value>false</value>
+    </equals>
+    </and>
+    </condition>
+    </animation> 
 
 <!--Harpoon-->
 <animation>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!-- R-27R                                      -->
+<!-- Sergey "Mercenary_Mercury" Salov, Dec 2012 -->
+
+<PropertyList>
+
+ <path>AGM.ac</path>
+
+
+
+
+  <animation>
+    <type>dist-scale</type>
+    <object-name>AGM</object-name>
+    <interpolation>
+      <entry><ind>    0 </ind><dep> 0 </dep></entry>
+      <entry><ind>   300 </ind><dep> 1 </dep></entry>
+      <entry><ind> 1500 </ind><dep> 2 </dep></entry>
+    </interpolation>
+  </animation>
+
+</PropertyList>

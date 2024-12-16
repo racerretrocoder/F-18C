@@ -226,9 +226,9 @@ var Loading_missile = func(name)
         detectionfovdeg = 180;                        # Search pattern diameter (rosette scan)
         trackmaxdeg = 180;                            # Seeker max total angular rotation
         maxg = 17;                                    # 
-        thrustlbs = 500;                             # 
+        thrustlbs = 2000;                             # 
         thrustdurationsec = 100;                        #
-        weightlaunchlbs = 186;
+        weightlaunchlbs = 1860;
         weightwarheadlbs = 1000;
         dragcoeff = 0.05;                              # guess; original 0.05
         dragarea = 0.075;                             # sq ft
@@ -240,7 +240,7 @@ var Loading_missile = func(name)
         cruisealt = 0;
         sdspeed = 0; # Weapon self distructs if its slower than mach  0
         chute = 0;
-        isbomb = 1;
+        isbomb = 0;
     }
      elsif(name == "AGM-88")
     {
@@ -255,22 +255,51 @@ var Loading_missile = func(name)
         detectionfovdeg = 180;                        # Search pattern diameter (rosette scan)
         trackmaxdeg = 180;                            # Seeker max total angular rotation
         maxg = 17;                                    # 
-        thrustlbs = 1000;                             # 
+        thrustlbs = 4000;                             # 
         thrustdurationsec = 20;                        #
-        weightlaunchlbs = 186;
+        weightlaunchlbs = 301;
         weightwarheadlbs = 1000;
+        dragcoeff = 0.001;                              # guess; original 0.05
+        dragarea = 0.005;                             # sq ft
+        maxExplosionRange = 50;                       
+        maxspeed = 5;                                 # In Mach
+        life = 80000000000000;
+        fox = "Magnum";    
+        rail = "true";
+        cruisealt = 7000;
+        sdspeed = 0; # Weapon self distructs if its slower than mach  0
+        chute = 0;
+        isbomb = 1;
+    } elsif(name == "AGM-65")
+    {
+        # AntiRad
+        flareres = 1;
+	    typeid = 58;
+        address = "Aircraft/F-18C/Models/Stores/Missiles/AGM-65/AGM65-smoke.xml"; 
+        NoSmoke = "Aircraft/F-18C/Models/Stores/Missiles/AGM-65/AGM65.xml"; # for now
+        Explosion = "Aircraft/F-18C/Models/Effects/MissileExplosion/explosionGBU.xml";
+        maxdetectionrngnm = 30;                       # 
+        fovdeg = 180;                                 # seeker optical FOV
+        detectionfovdeg = 180;                        # Search pattern diameter (rosette scan)
+        trackmaxdeg = 180;                            # Seeker max total angular rotation
+        maxg = 9;                                    # 
+        thrustlbs = 2000;                             # 
+        thrustdurationsec = 20;                        #
+        weightlaunchlbs = 802;
+        weightwarheadlbs = 70;
         dragcoeff = 0.001;                              # guess; original 0.05
         dragarea = 0.005;                             # sq ft
         maxExplosionRange = 50;                       
         maxspeed = 3;                                 # In Mach
         life = 80000000000000;
-        fox = "Magnum";    
+        fox = "Rifle";    
         rail = "true";
-        cruisealt = 1000;
+        cruisealt = 0;
         sdspeed = 0; # Weapon self distructs if its slower than mach  0
         chute = 0;
         isbomb = 1;
     }
+
 
 
 

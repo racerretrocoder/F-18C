@@ -1207,7 +1207,40 @@
 	</and>
    </condition>
   </sonicboom>
-  
+    <sonicboom>
+   <name>Sonic Boom2</name>
+	<mode>once</mode>
+   <path>Aircraft/F-18C/Sounds/sonicboom.wav</path>
+   <condition>
+   <and>
+	    <greater-than>
+	     	<property>velocities/mach</property>
+	     	<value>1.0</value>
+	    </greater-than>
+	    <equals>
+		    <property>/sim/current-view/internal</property>
+		    <value>false</value>
+		</equals>
+	</and>
+   </condition>
+  </sonicboom>
+    <sonicboom>
+   <name>Sonic Boom3</name>
+	<mode>once</mode>
+   <path>Aircraft/F-18C/Sounds/sonicboom.wav</path>
+   <condition>
+   <and>
+	    <greater-than>
+	     	<property>velocities/mach</property>
+	     	<value>1.0</value>
+	    </greater-than>
+	    <equals>
+		    <property>/sim/current-view/internal</property>
+		    <value>false</value>
+		</equals>
+	</and>
+   </condition>
+  </sonicboom>
   	<voice>
   <name>Geforce-breath-vox</name>
   <path>Aircraft/F-18C/Sounds/Geforce.wav</path>
@@ -1389,6 +1422,41 @@
 	
   </condition>
 </low-fuel5>
+
+ <rwr>
+            <name>rwr-spike-air</name>
+            <path>Aircraft/F-18C/Sounds/rwr-spike.wav</path>
+            <mode>looped</mode>
+            <type>avionics</type>
+            <condition>
+                <equals>
+                    <property>payload/armament/spike</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <volume>
+                <property>/sim/current-view/internal</property>
+                <factor>1</factor>
+            </volume>
+           
+        </rwr>
+ <rwr>
+            <name>rwr-spike-air2</name>
+            <path>Aircraft/F-18C/Sounds/rwr-spike.wav</path>
+            <mode>looped</mode>
+            <type>avionics</type>
+            <condition>
+                <equals>
+                    <property>payload/armament/spike</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <volume>
+                <property>/sim/current-view/internal</property>
+                <factor>1</factor>
+            </volume>
+           
+        </rwr>
 
 <!-- switches -->
 		<click>

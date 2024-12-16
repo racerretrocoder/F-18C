@@ -183,6 +183,13 @@
        
 	<int n="9" type="int">  0 </int>  <!-- RESERVED FOR DUAL CONTROL (Boolean Light Switch)-->
        
+
+
+   <float n="20" type="double" alias="/orientation/alpha-deg"/><!--For Vapor! -->
+ <float n="19" type="double" alias="/velocities/airspeed-kt"/><!--For the MP Sonic BOOM, Vapor, and more-->
+ <float n="30" type="double" alias="/velocities/mach"/><!--For the MP Sonic BOOM, Vapor, and more-->
+
+ <float n="31" type="double" alias="/controls/flight/aileron"/>
 	 <float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat Left Engine -->
 	 <float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat Right Engine -->
 	<float n="15" alias="/velocities/mach" /> <!-- Mach for Multiplayer Sound -->

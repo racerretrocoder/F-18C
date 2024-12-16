@@ -277,7 +277,7 @@
   <binding>
  <command>property-cycle</command>
  <property>controls/armament/selected-weapon</property>
-
+ <value>AGM-65</value>
  <value>AGM-84</value>
  <value>AGM-88</value>
 </binding>
@@ -288,6 +288,7 @@
  <value>3</value>
 
   <value>4</value>
+  <value>5</value>
 </binding>
   <binding><command>nasal</command><script>screen.log.write("Selected " ~ getprop("controls/armament/selected-weapon"),0.5,0.5,1);</script></binding>
    <binding><command>nasal</command><script>setprop("/controls/baydoors/AIM120", 1)</script></binding>

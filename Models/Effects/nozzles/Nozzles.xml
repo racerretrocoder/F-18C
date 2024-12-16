@@ -8,7 +8,7 @@
 <!-- left exhaust -->
 
 <model> 
-  <path>Aircraft/F-18D/Models/Effects/nozzles/NozzleL.xml</path>
+  <path>Aircraft/F-18C/Models/Effects/nozzles/NozzleL.xml</path>
   <offsets> 
     <x-m>13.847</x-m>
     <y-m>-0.957</y-m>
@@ -17,7 +17,7 @@
 </model>
 
 <model> 
-  <path>Aircraft/F-18D/Models/Effects/nozzles/NozzleL.xml</path>
+  <path>Aircraft/F-18C/Models/Effects/nozzles/NozzleL.xml</path>
   <offsets> 
     <x-m>13.847</x-m>
     <y-m>-0.957</y-m>
@@ -27,7 +27,7 @@
 </model>
 
 <model> 
-  <path>Aircraft/F-18D/Models/Effects/nozzles/NozzleL.xml</path>
+  <path>Aircraft/F-18C/Models/Effects/nozzles/NozzleL.xml</path>
   <offsets> 
     <x-m>13.847</x-m>
     <y-m>-0.957</y-m>
@@ -37,7 +37,7 @@
 </model>
 
 <model> 
-  <path>Aircraft/F-18D/Models/Effects/nozzles/NozzleL.xml</path>
+  <path>Aircraft/F-18C/Models/Effects/nozzles/NozzleL.xml</path>
   <offsets> 
     <x-m>13.847</x-m>
     <y-m>-0.957</y-m>
@@ -47,7 +47,7 @@
 </model>
 
 <model> 
-  <path>Aircraft/F-18D/Models/Effects/nozzles/NozzleL.xml</path>
+  <path>Aircraft/F-18C/Models/Effects/nozzles/NozzleL.xml</path>
   <offsets> 
     <x-m>13.847</x-m>
     <y-m>-0.957</y-m>
@@ -57,7 +57,7 @@
 </model>
 
 <model> 
-  <path>Aircraft/F-18D/Models/Effects/nozzles/NozzleL.xml</path>
+  <path>Aircraft/F-18C/Models/Effects/nozzles/NozzleL.xml</path>
   <offsets> 
     <x-m>13.847</x-m>
     <y-m>-0.957</y-m>
@@ -67,7 +67,7 @@
 </model>
 
 <model> 
-  <path>Aircraft/F-18D/Models/Effects/nozzles/NozzleL.xml</path>
+  <path>Aircraft/F-18C/Models/Effects/nozzles/NozzleL.xml</path>
   <offsets> 
     <x-m>13.847</x-m>
     <y-m>-0.957</y-m>
@@ -77,7 +77,7 @@
 </model>
 
 <model> 
-  <path>Aircraft/F-18D/Models/Effects/nozzles/NozzleL.xml</path>
+  <path>Aircraft/F-18C/Models/Effects/nozzles/NozzleL.xml</path>
   <offsets> 
     <x-m>13.847</x-m>
     <y-m>-0.957</y-m>
@@ -87,7 +87,7 @@
 </model>
 
 <model> 
-  <path>Aircraft/F-18D/Models/Effects/nozzles/NozzleL.xml</path>
+  <path>Aircraft/F-18C/Models/Effects/nozzles/NozzleL.xml</path>
   <offsets> 
     <x-m>13.847</x-m>
     <y-m>-0.957</y-m>

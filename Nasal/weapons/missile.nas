@@ -598,6 +598,7 @@ sendinflight: func(call,lat,lon,alt,hdg,ptch,speed,unique,deleted,tid){
                         if(me.NameOfMissile == "Aim-9m"){me.NameOfMissile="Aim-9m";typeID = 69;}  
                         if(me.NameOfMissile == "AGM-84"){me.NameOfMissile="AGM-84";typeID = 1;}         
                         if(me.NameOfMissile == "AGM-88"){me.NameOfMissile="AGM-88";typeID = 2;}    
+                        if(me.NameOfMissile == "AGM-65"){me.NameOfMissile="AGM-65";typeID = 58;}  
                         if(me.NameOfMissile == "eject"){me.NameOfMissile="eject";typeID = 93;}
     }  else {
         typeID = tid;
@@ -955,6 +956,7 @@ var OurLon       = props.globals.getNode("position/longitude-deg");
                         if(me.NameOfMissile == "Aim-9m"){me.NameOfMissile="Aim-9m";typeID = 69;}  
                         if(me.NameOfMissile == "AGM-84"){me.NameOfMissile="AGM-84";typeID = 1;}  
                         if(me.NameOfMissile == "AGM-88"){me.NameOfMissile="AGM-88";typeID = 2;}    
+                        if(me.NameOfMissile == "AGM-65"){me.NameOfMissile="AGM-65";typeID = 58;}  
                         if(me.NameOfMissile == "eject"){me.NameOfMissile="eject";typeID = 93;}
 
                     me.sendinflight(0,0,0,0,0,0,0,me.unique_id,1,typeID);
@@ -1412,7 +1414,8 @@ var semiactive = 0;
                         if(me.NameOfMissile == "Aim-9m"){me.NameOfMissile="Aim-9m";typeID = 69;}  
                         if(me.NameOfMissile == "AGM-84"){me.NameOfMissile="AGM-84";typeID = 1;}  
                         if(me.NameOfMissile == "AGM-88"){me.NameOfMissile="AGM-88";typeID = 2;}    
-
+                        if(me.NameOfMissile == "AGM-65"){me.NameOfMissile="AGM-65";typeID = 58;}  
+                        
                         var msg = notifications.ArmamentNotification.new("mhit", 4, damage.DamageRecipient.typeID2emesaryID(typeID));
                         msg.RelativeAltitude = 0;
                         msg.Bearing = me.coord.course_to(geo.aircraft_position());
