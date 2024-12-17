@@ -206,9 +206,9 @@
 <string n="15" type="string" alias="/sim/weight[5]/selected"/>
 <string n="16" type="string" alias="/sim/weight[6]/selected"/>
 <string n="17" type="string" alias="/sim/weight[7]/selected"/>
-<string n="18" type="string" alias="/sim/weight[8]/selected"/>
-<string n="19" type="string" alias="/sim/weight[9]/selected"/>
-<string n="20" type="string" alias="/sim/weight[11]/selected"/>
+<string n="18" type="string" alias="/sim/weight[11]/selected"/>
+<string n="19" type="string" alias="/sim/weight[10]/selected"/>
+<string n="20" type="string" alias=""/>
 <string n="21" type="string" alias="/sim/weight[12]/selected"/>
 <string n="22" type="string" alias="/sim/weight[13]/selected"/>
 <string n="23" type="string" alias="/sim/weight[14]/selected"/>
@@ -218,7 +218,7 @@
 <string n="27" type="string" alias="/sim/weight[18]/selected"/>
 <string n="28" type="string" alias="/sim/weight[19]/selected"/>
 <string n="29" type="string" alias="/sim/weight[20]/selected"/>
-<string n="30" type="string" alias="/sim/weight[10]/selected"/>
+
 <bool n="10" type="bool" alias="/controls/armament/station/release"/> <!--Idk if this is ok for multiplayer. It seems good for now. ill make a nasal script thatll say INTS to lower mem usage: 1 for aim120. 2 for aim9 3 for GBU39 4 for extra 5 for extra-->
 <bool n="11" type="bool" alias="/controls/armament/station[1]/release"/>
 <bool n="12" type="bool" alias="/controls/armament/station[2]/release"/>
@@ -920,6 +920,10 @@
 <menubar include="Dialogs/F15-menu.xml"/>
 
 </sim>
+
+        <sound>
+            <rwr-new type="double">0</rwr-new>
+        </sound>
 <payload>
         <d-config>
             <full_damage_dist_m type="double">3</full_damage_dist_m>
@@ -1234,7 +1238,8 @@
             <channel_prop type="string">instrumentation/datalink/channel</channel_prop>
             <receive_period type="double">1</receive_period>
         </datalink>
-<rwr>
+ 
+		 <rwr>
       <display-lighting-intens type="double">0.4</display-lighting-intens>
       <symbology-lighting-intens type="double">1</symbology-lighting-intens>
     </rwr>
@@ -1400,6 +1405,12 @@
  <vector>
             <file>Aircraft/F-18C/Nasal/vector.nas</file>
         </vector>
+
+                <rcs>
+            <!-- must be before radar -->
+            <file>Aircraft/F-18C/Nasal/rcs_mand.nas</file>
+            <file>Aircraft/F-18C/Nasal/rcs.nas</file>
+        </rcs>
 <doors>
 <file>Aircraft/F-18C/Nasal/doors.nas</file>
 </doors>
@@ -1417,29 +1428,18 @@
 <F-18D_fuel>
    <file>Aircraft/F-18C/Nasal/fuel.nas</file>
   </F-18D_fuel>
-<radar>
-<file>Aircraft/F-18C/Nasal/radar.nas</file> 
-    </radar>
-<radar2>
-<file>Aircraft/F-18C/Nasal/radar2.nas</file>
-</radar2>
-<rwr>
- <file>Aircraft/F-18C/Models/Interior/Panel/Instruments/Radar/rwr.nas</file>
-</rwr> 
- <hud>
-      <file>Aircraft/F-18C/Nasal/MiscRwr.nas</file>
-    </hud>
-<radardist>
-<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
-</radardist>
+
+
+
+
     <guns>
       <file>Aircraft/F-18C/Nasal/weapons.nas</file>
       <file>Aircraft/F-18C/Nasal/revi.nas</file>
     </guns>
 	
-	<lights>
-		   <file>Aircraft/F-18C/Nasal/lights.nas</file>
-		</lights>
+ <tacview>
+            <file>Aircraft/F-18C/Nasal/tacview.nas</file>
+        </tacview>
 
 <terrain-map>
  
@@ -1485,6 +1485,21 @@
 
 		
     <WCS><file>Aircraft/F-18C/Nasal/wcs-helper.nas</file> </WCS>
+
+
+        <rwrs>
+            <file>Aircraft/F-18C/Nasal/rwr.nas</file>
+        </rwrs>
+
+
+        <radar_system>
+           	<file>Aircraft/F-18C/Nasal/radar-system-database.nas</file>
+            <file>Aircraft/F-18C/Nasal/radar-system.nas</file>
+            <file>Aircraft/F-18C/Nasal/rwr-only.nas</file>
+        </radar_system>
+<armament>
+      <file>Aircraft/F-18C/Nasal/missile-code.nas</file>
+</armament>  <!--Only for RWR-->
 
 
 

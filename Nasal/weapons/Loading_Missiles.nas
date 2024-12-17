@@ -2,7 +2,7 @@
 ################################################################################
 #
 #                     F-18C  LOADS AND MISSILES PARAMETERS
-#Note: these missiles are VERY basic, and curently the only for the radar to work
+#
 ################################################################################
 
 var Loading_missile = func(name)
@@ -262,7 +262,7 @@ var Loading_missile = func(name)
         dragcoeff = 0.001;                              # guess; original 0.05
         dragarea = 0.005;                             # sq ft
         maxExplosionRange = 50;                       
-        maxspeed = 5;                                 # In Mach
+        maxspeed = 6;                                 # In Mach
         life = 80000000000000;
         fox = "Magnum";    
         rail = "true";
@@ -283,7 +283,7 @@ var Loading_missile = func(name)
         detectionfovdeg = 180;                        # Search pattern diameter (rosette scan)
         trackmaxdeg = 180;                            # Seeker max total angular rotation
         maxg = 9;                                    # 
-        thrustlbs = 2000;                             # 
+        thrustlbs = 1000;                             # 
         thrustdurationsec = 20;                        #
         weightlaunchlbs = 802;
         weightwarheadlbs = 70;

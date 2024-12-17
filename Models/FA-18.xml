@@ -490,7 +490,7 @@ if(navStillOn) {
 <animation>
   <type>rotate</type>
     <object-name>TipWingRight</object-name>
-    <property>instrumentation/doors/wings/position-norm</property>
+    <property>sim/multiplay/generic/float[18]</property>
     <factor> 90 </factor>
     <axis>
        <x1-m>  1.981 </x1-m>
@@ -518,7 +518,7 @@ if(navStillOn) {
   <animation>
     <type>rotate</type>
     <object-name>TipWingLeft</object-name>
-    <property>instrumentation/doors/wings/position-norm</property>
+    <property>sim/multiplay/generic/float[18]</property>
     <factor> -90 </factor>
     <axis>
       <x1-m>  1.981 </x1-m>
@@ -2091,7 +2091,7 @@ if(navStillOn) {
 <condition>
 <and>
 <equals>
-<property>sim/multiplay/generic/string[30]</property>
+<property>sim/multiplay/generic/string[19]</property>
 <value>AIM-7</value>
 </equals>
 <equals>
@@ -2107,7 +2107,7 @@ if(navStillOn) {
 <condition>
 <and>
 <equals>
-<property>sim/multiplay/generic/string[20]</property>
+<property>sim/multiplay/generic/string[18]</property>
 <value>AIM-7</value>
 </equals>
 <equals>
@@ -2157,7 +2157,7 @@ if(navStillOn) {
 <condition>
 <and>
 <equals>
-<property>sim/multiplay/generic/string[30]</property>
+<property>sim/multiplay/generic/string[19]</property>
 <value>AGM-88</value>
 </equals>
 <equals>
@@ -2173,7 +2173,7 @@ if(navStillOn) {
 <condition>
 <and>
 <equals>
-<property>sim/multiplay/generic/string[20]</property>
+<property>sim/multiplay/generic/string[18]</property>
 <value>AGM-88</value>
 </equals>
 <equals>
@@ -2225,7 +2225,7 @@ if(navStillOn) {
     <condition>
     <and>
     <equals>
-    <property>sim/multiplay/generic/string[30]</property>
+    <property>sim/multiplay/generic/string[19]</property>
     <value>AGM-65</value>
     </equals>
     <equals>
@@ -2241,7 +2241,7 @@ if(navStillOn) {
     <condition>
     <and>
     <equals>
-    <property>sim/multiplay/generic/string[20]</property>
+    <property>sim/multiplay/generic/string[18]</property>
     <value>AGM-65</value>
     </equals>
     <equals>
@@ -2291,7 +2291,7 @@ if(navStillOn) {
 <condition>
 <and>
 <equals>
-<property>sim/multiplay/generic/string[30]</property>
+<property>sim/multiplay/generic/string[19]</property>
 <value>AGM-84</value>
 </equals>
 <equals>
@@ -2307,7 +2307,7 @@ if(navStillOn) {
 <condition>
 <and>
 <equals>
-<property>sim/multiplay/generic/string[20]</property>
+<property>sim/multiplay/generic/string[18]</property>
 <value>AGM-84</value>
 </equals>
 <equals>
@@ -2384,7 +2384,7 @@ if(navStillOn) {
 <condition>
 <and>
 <equals>
-<property>sim/multiplay/generic/string[30]</property>
+<property>sim/multiplay/generic/string[19]</property>
 <value>NONE</value>
 </equals>
 </and>
@@ -2397,7 +2397,7 @@ if(navStillOn) {
 <condition>
 <and>
 <equals>
-<property>sim/multiplay/generic/string[20]</property>
+<property>sim/multiplay/generic/string[18]</property>
 <value>NONE</value>
 </equals>
 </and>

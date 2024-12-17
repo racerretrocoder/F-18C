@@ -126,6 +126,7 @@ var MISSILE = {
         # m.free :
         # 0 = status fired with lock
         # 1 = status fired but having lost lock.
+        m.magnumlocked      = 1;
         m.free              = 0;
         #m.prop              = AcModel.getNode("systems/armament/missile/").getChild("msl", 0 , 1);
         #m.PylonIndex        = m.prop.getNode("pylon-index", 1).setValue(p);
@@ -732,14 +733,24 @@ var msg = notifications.ArmamentInFlightNotification.new("mfly", unique, deleted
 
                     if(me.fox == "Magnum") {
                         print("Anti-Rad: Checking");
-                        if ( getprop("payload/armament/spike") == 0 ) {
-                            print("Anti-Rad Missile Lost track because the target stopped locking on us!");
-                    #me.animate_explosion();
+                        if (me.magnumlocked == 0){ # launched the missile
+                            if (getprop("payload/armament/spike") == 1) { # If where being spiked
+                            print("Magnum: Engaged");
+                            me.magnumlocked = 1;  # Now this script wont run again
+
+                        } else {
+                            me.magnumlocked = 0; # Where not being spiked when we shot it
+                            #me.animate_explosion();
                             me.reset_steering();
                             me.free = 1;
-
+                            # Magnum lost track
                         }
+                    } else {
+                            me.magnumlocked = 1; # Its 1 lets engage the GND
+                            print("Magnum: Guiding");
                     }
+                }
+
 
         if(me.life_time > me.Life)
         {
