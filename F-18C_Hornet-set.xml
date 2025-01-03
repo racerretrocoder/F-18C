@@ -11,6 +11,7 @@
   <flight-model>yasim</flight-model>
   <aero>F-18-yasim</aero>  <!-- For FG Versions earlier than 3.2, remove this line -->
    <!--  <aero>F-18old-yasim</aero> -->  <!-- for FG versions earlier than 3.2, un comment this line to use the original FDM -->
+  <primary-set type="bool">true</primary-set>
 <fuel-fraction>1.0</fuel-fraction>
 <rating>
 <FDM type="int">4</FDM>
@@ -1215,9 +1216,6 @@
 
 
 <engines>
-
- 
-
 		<engine n="0">
 			<running>true</running>
 			<augmentation type="int">0</augmentation>	

@@ -1,0 +1,1553 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <sim>
+
+  <description>F/A-18D_Hornet (yasim )</description>
+  <author>Mathias Froehlich, StuartC</author>
+  <status>Alpha 0.9</status>
+ 
+  <flight-model>yasim</flight-model>
+  <aero>F-18-yasim</aero>  <!-- For FG Versions earlier than 3.2, remove this line -->
+   <!--  <aero>F-18old-yasim</aero> -->  <!-- for FG versions earlier than 3.2, un comment this line to use the original FDM -->
+  <variant-of>F-18C_Hornet</variant-of>
+<fuel-fraction>1.0</fuel-fraction>
+<rating>
+<FDM type="int">4</FDM>
+<systems type="int">3</systems>
+<cockpit type="int">3</cockpit>
+<model type="int">3</model>
+</rating>
+
+
+
+  <startup>
+   <splash-texture>Aircraft/F-18C/splash.png</splash-texture>
+  </startup>
+
+  <sound>
+   <path>Aircraft/F-18C/Sounds/sound.xml</path>
+  </sound>
+
+  <model>
+   <path>Aircraft/F-18C/Models/D/FA-18D.xml</path>
+  </model>
+
+  <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/F-18C/Models/D/Effects/guns/submodels.xml</path>
+      <!-- <path>Aircraft/F-18C/Models/D/weapons/loads.xml</path> -->
+  </submodels>
+
+   <ai>
+      <scenario>
+	   <path>Aircraft/F-18C/AI/EGOD_arrestor_cables.xml</path>
+	  </scenario>
+    </ai>
+
+
+  <panel>
+   <visibility archive="y">false</visibility>
+  </panel>
+
+  <hud>
+   <path n="1">Aircraft/F-18C/Hud/hud.xml</path>
+   <visibility n="1">true</visibility>
+   <palette>
+    <color n="0">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">0.38</red>
+     <green type="float">1.0</green>
+     <blue type="float">0.22</blue>
+    </color>
+    <color n="1">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">1.0</red>
+     <green type="float">0.2</green>
+     <blue type="float">0.0</blue>
+    </color>
+   </palette>
+    <clipping>
+    <left type="double">-66</left>
+    <right type="double">76</right>
+    <top type="double">25</top>
+    <bottom type="double">-120</bottom>
+     </clipping>
+   
+  </hud>
+  
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+     <x-offset-m archive="y">0</x-offset-m> <!-- -0.28-->
+     <y-offset-m archive="y">1.2</y-offset-m>   <!-- 0.51-->
+     <z-offset-m archive="y">-3.6</z-offset-m>   <!-- 2.62-->
+     <pitch-offset-deg>0</pitch-offset-deg>
+ <default-field-of-view-deg>60.3</default-field-of-view-deg>
+
+   </config>
+  </view>
+  
+  <view n="100">
+  <name>Weapons officer View</name>
+  <internal archive="y">true</internal>
+	<type>lookfrom</type>
+	<config>
+	<from-model type="bool">true</from-model>
+	<from-model-idx type="int">0</from-model-idx>
+   <x-offset-m archive="y">0</x-offset-m> 
+     <y-offset-m archive="y">1.4</y-offset-m>  
+     <z-offset-m archive="y">-2.2</z-offset-m>  
+	 
+
+	<limits>
+	   <left>
+	  <heading-max-deg>-100</heading-max-deg>
+<x-offset-threshold-deg>0</x-offset-threshold-deg>
+<x-offset-max-m>0</x-offset-max-m>
+</left>
+<right>
+<heading-max-deg>100</heading-max-deg>
+<x-offset-threshold-deg>0</x-offset-threshold-deg>
+<x-offset-max-m>0</x-offset-max-m>
+</right>
+<enabled>1</enabled>
+</limits>
+   </config>
+  </view>
+  
+
+ <view n="101">
+	   <name>Pilot cam</name>
+        <internal archive="y">false</internal>
+        <config>
+		 <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+       <x-offset-m archive="y">-0.0</x-offset-m>
+     <y-offset-m archive="y">1.16</y-offset-m>
+     <z-offset-m archive="y">-4.1</z-offset-m> 
+          <pitch-offset-deg>0</pitch-offset-deg>
+		  <heading-offset-deg>180</heading-offset-deg>
+          <default-field-of-view-deg>95</default-field-of-view-deg>
+        </config>
+      </view>
+
+
+		<view n="102">
+			<name>Over the shoulder</name>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">0.37</x-offset-m>
+				<y-offset-m archive="y">1.2</y-offset-m>   <!-- 0.51-->
+                <z-offset-m archive="y">-3.1</z-offset-m>   <!-- 2.62-->
+				<pitch-offset-deg>-3</pitch-offset-deg>
+				<heading-offset-deg>10</heading-offset-deg>
+				<default-field-of-view-deg>65</default-field-of-view-deg>
+			</config>
+		</view>
+
+
+
+  <chase-distance-m>-25</chase-distance-m>
+
+  <!-- turns off GA tower communications -->
+  <ATC>
+   <enabled type="bool">false</enabled>
+  </ATC>
+
+  <!-- turns off GA traffic -->
+  <ai-traffic>
+   <enabled type="bool">false</enabled>
+  </ai-traffic>
+
+<systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+      <autopilot>
+        <path>Aircraft/F-18C/System/Autopilot.xml</path>
+      </autopilot>
+  <refuel>
+  <type>probe</type>
+  <serviceable type="bool">true</serviceable>
+ </refuel>
+    
+    </systems>
+<mp-systems>
+					<radar-enabled type="bool">true</radar-enabled>
+					<ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
+					<combat-enabled type="bool">true</combat-enabled>
+				</mp-systems>
+				
+ <multiplay n="0">
+      <chat_display>1</chat_display>
+      <generic n="0">
+	
+	
+      <!-- Nav lights on -->
+      <int n="0" alias="/controls/lighting/nav-lights-switch" />
+      <!-- Beacon on -->
+      <int n="1" alias="/controls/lighting/beacon-switch" />
+      
+      <!-- int[2] reserved for radar -->
+      <int n="2" type="int">1</int>    <!-- force radar standby transmission over MP -->
+      <!-- Landing lights on -->
+      <int n="3" alias="/controls/lighting/landing-lights-switch" />
+	  
+	    <int n="5" alias="/engines/engine[0]/state" />
+	  <int n="6" alias="/engines/engine[1]/state" />
+	  <int n="7" alias="/sim/crashed" />
+      
+       
+	<int n="9" type="int">  0 </int>  <!-- RESERVED FOR DUAL CONTROL (Boolean Light Switch)-->
+       
+	 <float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat Left Engine -->
+	 <float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat Right Engine -->
+	<float n="15" alias="/velocities/mach" /> <!-- Mach for Multiplayer Sound -->
+	 <float n="16" alias="/engines/engine[0]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
+	 <float n="17" alias="/engines/engine[1]/thrust-lbs" /> <!-- Thrust for Multiplayer Sound -->
+	
+      <string n="0" type="string"></string>    <!-- bs_TDM1_mpp -->
+				<string n="1" type="string"></string>    <!-- pilot's instruments -->
+
+<string n="10" type="string" alias="/sim/weight/selected"/> <!--Idk if this is ok for multiplayer. It seems good for now. ill make a nasal script thatll say INTS to lower mem usage: 1 for aim120. 2 for aim9 3 for GBU39 4 for extra 5 for extra-->
+<string n="11" type="string" alias="/sim/weight[1]/selected"/>
+<string n="12" type="string" alias="/sim/weight[2]/selected"/>
+<string n="13" type="string" alias="/sim/weight[3]/selected"/>
+<string n="14" type="string" alias="/sim/weight[4]/selected"/>
+<string n="15" type="string" alias="/sim/weight[5]/selected"/>
+<string n="16" type="string" alias="/sim/weight[6]/selected"/>
+<string n="17" type="string" alias="/sim/weight[7]/selected"/>
+<string n="18" type="string" alias="/sim/weight[11]/selected"/>
+<string n="19" type="string" alias="/sim/weight[10]/selected"/>
+<string n="20" type="string" alias=""/>
+<string n="21" type="string" alias="/sim/weight[12]/selected"/>
+<string n="22" type="string" alias="/sim/weight[13]/selected"/>
+<string n="23" type="string" alias="/sim/weight[14]/selected"/>
+<string n="24" type="string" alias="/sim/weight[15]/selected"/>
+<string n="25" type="string" alias="/sim/weight[16]/selected"/>
+<string n="26" type="string" alias="/sim/weight[17]/selected"/>
+<string n="27" type="string" alias="/sim/weight[18]/selected"/>
+<string n="28" type="string" alias="/sim/weight[19]/selected"/>
+<string n="29" type="string" alias="/sim/weight[20]/selected"/>
+
+<bool n="10" type="bool" alias="/controls/armament/station/release"/> <!--Idk if this is ok for multiplayer. It seems good for now. ill make a nasal script thatll say INTS to lower mem usage: 1 for aim120. 2 for aim9 3 for GBU39 4 for extra 5 for extra-->
+<bool n="11" type="bool" alias="/controls/armament/station[1]/release"/>
+<bool n="12" type="bool" alias="/controls/armament/station[2]/release"/>
+<bool n="13" type="bool" alias="/controls/armament/station[3]/release"/>
+<bool n="14" type="bool" alias="/controls/armament/station[4]/release"/>
+<bool n="15" type="bool" alias="/controls/armament/station[5]/release"/>
+<bool n="16" type="bool" alias="/controls/armament/station[6]/release"/>
+<bool n="17" type="bool" alias="/controls/armament/station[7]/release"/>
+<bool n="18" type="bool" alias="/controls/armament/station[8]/release"/>
+<bool n="19" type="bool" alias="/controls/armament/station[9]/release"/>
+<bool n="20" type="bool" alias="/controls/armament/station[11]/release"/>
+<bool n="21" type="bool" alias="/controls/armament/station[12]/release"/>
+<bool n="22" type="bool" alias="/controls/armament/station[13]/release"/>
+<bool n="23" type="bool" alias="/controls/armament/station[14]/release"/>
+<bool n="24" type="bool" alias="/controls/armament/station[15]/release"/>
+<bool n="25" type="bool" alias="/controls/armament/station[16]/release"/>
+<bool n="26" type="bool" alias="/controls/armament/station[17]/release"/>
+<bool n="27" type="bool" alias="/controls/armament/station[18]/release"/>
+<bool n="28" type="bool" alias="/controls/armament/station[19]/release"/>
+<bool n="29" type="bool" alias="/controls/armament/station[20]/release"/>
+<bool n="30" type="bool" alias="/controls/armament/station[10]/release"/>
+
+        
+      </generic>
+    </multiplay>				
+
+
+<weight n="0">
+<name>pylon1.L</name>
+<weight-lb>0</weight-lb>
+      <offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> -6 </y-m>
+    <z-m type="double"> 0 </z-m>
+      </offsets>
+<selected>NONE</selected>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+<lbs>190.0</lbs>
+</opt>
+</weight>
+
+<weight n="1">
+<name>pylon2.L</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> -3.7 </y-m>
+    <z-m type="double"> -1</z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt> 
+<opt>
+<name>AIM-7</name>
+<lbs>510.0</lbs>
+</opt>
+<opt>
+<name>AGM-65</name>
+<lbs>670.0</lbs>
+</opt>
+<opt>
+<name>AGM-88</name>
+<lbs>780.0</lbs>
+</opt>
+<opt>
+<name>AGM-62</name>
+<lbs>2340</lbs>
+</opt>
+<opt>
+<name>AGM-84</name>
+<lbs>1523</lbs>
+</opt>
+<opt>
+<name>AGM-154</name>
+<lbs>1095</lbs>
+</opt>
+<opt>
+<name>GBU-10</name>
+<lbs>2000</lbs>
+</opt>
+<opt>
+<name>GBU-12</name>
+<lbs>500</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1000</lbs>
+</opt>
+<opt>
+<name>2x MK-82</name>
+<lbs>1000.00</lbs>
+</opt>
+<opt>
+<name>2x MK-83</name>
+<lbs>2028.00</lbs>
+</opt>
+</weight>
+
+<weight n="2">
+<name>pylon3.L</name>
+<tank>4</tank>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> -2.6 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>330 Gal Droptank</name>
+<lbs>184.0</lbs>
+<gals>330</gals>
+</opt>
+<opt>
+<name>AIM-7</name>
+<lbs>510.0</lbs>
+</opt>
+<opt>
+<name>AGM-65</name>
+<lbs>670.0</lbs>
+</opt>
+<opt>
+<name>AGM-88</name>
+<lbs>780.0</lbs>
+</opt>
+<opt>
+<name>AGM-84</name>
+<lbs>1523</lbs>
+</opt>
+<opt>
+<name>AGM-154</name>
+<lbs>1095</lbs>
+</opt>
+<opt>
+<name>GBU-12</name>
+<lbs>500</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1000</lbs>
+</opt>
+<opt>
+<name>2x MK-82</name>
+<lbs>1000.00</lbs>
+</opt>
+<opt>
+<name>2x MK-83</name>
+<lbs>2028.00</lbs>
+</opt>
+</weight>
+
+<weight n="3">
+<name>pylon3.LO</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> 0  </x-m>
+    <y-m type="double"> 0 </y-m>
+    <z-m type="double"> 0 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt> 
+
+</weight>
+
+<weight n="4">
+<name>pylon3.LI</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> 0  </x-m>
+    <y-m type="double"> 0 </y-m>
+    <z-m type="double"> 0 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt> 
+
+</weight>
+
+<weight n="5">
+<name>pylon4.L</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> 0  </x-m>
+    <y-m type="double"> 0 </y-m>
+    <z-m type="double"> 0 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-7</name>
+<lbs>510.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.0</lbs>
+</opt>
+</weight>
+
+
+<weight n="6">
+<name>pylonC</name>
+<tank>5</tank>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> 0  </x-m>
+    <y-m type="double"> 0 </y-m>
+    <z-m type="double"> 0 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>330 Gal Droptank</name>
+<lbs>184.0</lbs>
+<gals>330</gals>
+</opt>
+<opt>
+<name>2x MK-82</name>
+<lbs>1000.00</lbs>
+</opt>
+<opt>
+<name>MK-83</name>
+<lbs>1014.00</lbs>
+</opt>
+</weight>
+
+<weight n="7">
+<name>pylon4.R</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> 0  </x-m>
+    <y-m type="double"> 0 </y-m>
+    <z-m type="double"> 0 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-7</name>
+<lbs>510.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.0</lbs>
+</opt>
+</weight>
+
+
+<weight n="8">
+<name>pylon3.RI</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> 0  </x-m>
+    <y-m type="double"> 0 </y-m>
+    <z-m type="double"> 0 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt> 
+
+</weight>
+
+<weight n="9">
+<name>pylon3.RO</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> 0  </x-m>
+    <y-m type="double"> 0 </y-m>
+    <z-m type="double"> 0 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt> 
+
+</weight>
+
+
+
+
+<weight n="10">
+<name>pylon3.R</name>
+<tank>6</tank>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3 </x-m>
+    <y-m type="double"> 2.6 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>330 Gal Droptank</name>
+<lbs>184.0</lbs>
+<gals>330</gals>
+</opt>
+<opt>
+<name>AIM-7</name>
+<lbs>510.0</lbs>
+</opt>
+
+<opt>
+<name>AGM-65</name>
+<lbs>670.0</lbs>
+</opt>
+<opt>
+<name>AGM-88</name>
+<lbs>780.0</lbs>
+</opt>
+<opt>
+<name>AGM-84</name>
+<lbs>1523</lbs>
+</opt>
+<opt>
+<name>AGM-154</name>
+<lbs>1095</lbs>
+</opt>
+<opt>
+<name>GBU-12</name>
+<lbs>500</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1000</lbs>
+</opt>
+<opt>
+<name>2x MK-82</name>
+<lbs>1000.00</lbs>
+</opt>
+<opt>
+<name>2x MK-83</name>
+<lbs>2028.00</lbs>
+</opt>
+</weight>
+
+
+<weight n="11">
+<name>pylon2.R</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> 3.7 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-7</name>
+<lbs>510.0</lbs>
+</opt>
+
+<opt>
+<name>AGM-65</name>
+<lbs>670.0</lbs>
+</opt>
+<opt>
+<name>AGM-88</name>
+<lbs>780.0</lbs>
+</opt>
+<opt>
+<name>AGM-62</name>
+<lbs>2340</lbs>
+</opt>
+<opt>
+<name>AGM-84</name>
+<lbs>1523</lbs>
+</opt>
+<opt>
+<name>AGM-154</name>
+<lbs>1095</lbs>
+</opt>
+<opt>
+<name>GBU-10</name>
+<lbs>2000</lbs>
+</opt>
+<opt>
+<name>GBU-12</name>
+<lbs>500</lbs>
+</opt>
+<opt>
+<name>GBU-16</name>
+<lbs>1000</lbs>
+</opt>
+<opt>
+<name>2x MK-82</name>
+<lbs>1000.00</lbs>
+</opt>
+<opt>
+<name>2x MK-83</name>
+<lbs>2028.00</lbs>
+</opt>
+</weight>
+
+
+<weight n="12">
+<name>pylon1.R</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> 6 </y-m>
+    <z-m type="double"> 0 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+<lbs>190.0</lbs>
+</opt>
+</weight>
+
+<weight n="13">
+<name>pylonBB.R</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> -4 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.00</lbs>
+</opt>
+</weight>
+<weight n="14">
+<name>pylonBB.L</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> -3.4 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.00</lbs>
+</opt>
+</weight>
+<weight n="15">
+<name>pylonAA.R</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> -2.9 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.00</lbs>
+</opt>
+</weight>
+<weight n="16">
+<name>pylonAA.L</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> -1.99 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.00</lbs>
+</opt>
+</weight>
+
+<weight n="17">
+<name>pylonDD.R</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> 1.99 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.00</lbs>
+</opt>
+</weight>
+<weight n="18">
+<name>pylonDD.L</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3 </x-m>
+    <y-m type="double"> 2.9 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.00</lbs>
+</opt>
+</weight>
+<weight n="19">
+<name>pylonCC.R</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3 </x-m>
+    <y-m type="double"> 3.4 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.00</lbs>
+</opt>
+</weight>
+<weight n="20">
+<name>pylonCC.L</name>
+<weight-lb>0</weight-lb>
+<selected>NONE</selected>       
+<offsets>
+    <x-m type="double"> -3  </x-m>
+    <y-m type="double"> 4 </y-m>
+    <z-m type="double"> -1 </z-m>
+      </offsets>
+<opt>
+<name>NONE</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>Aim-9x</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>Aim-120</name>
+<lbs>330.00</lbs>
+</opt>
+</weight>
+
+
+<help>
+      <title>F-18C</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+	
+	   <key>
+        <name>w</name>
+        <desc>Weapon mode select</desc>
+      </key>
+      <key>
+        <name>e</name>
+        <desc>Guns fire</desc>
+      </key>
+      <key>
+        <name>f</name>
+        <desc>Fold/unfold wings</desc>
+      </key>
+      <key>
+        <name>o/O</name>
+        <desc>Arrestor hook</desc>
+      </key>
+	  <key>
+        <name>l</name>
+        <desc>engage launch bar</desc>
+      </key>
+	  
+	   <key>
+        <name>8</name>
+        <desc>Launch flares</desc>
+      </key>
+       <key>
+        <name>T</name>
+        <desc>Toggle RWR</desc>
+      </key>
+      <key>
+        <name>t</name>
+        <desc>Change Radar Distances (10, 20 50,100,150)</desc>
+      </key>
+      <key>
+        <name>R</name>
+        <desc>Activate/desactivate targeting the nearest (the target have to be bellow radar range)</desc>
+      </key>
+      <key>
+        <name>H</name>
+        <desc>Toggle Armements Circles</desc>
+      </key>
+	   <key>
+        <name>n</name>
+        <desc>Next Target</desc>
+      </key>
+      <key>
+        <name>Ctrl-n</name>
+        <desc>Previous Target</desc>
+      </key>  
+      
+       <line>Drop tanks:-</line>
+	  <line> The Drop tanks self regulate. You just need to put fuel in them. </line>
+      <line>When selected  the drop tanks will feed first and your internal tanks will be disabled.</line>
+      <line>If all 3 drop tanks are selected, the Centre tank will feed first then the wing droptanks will activate.</line>
+     <line></line>
+	  <line>Using pre selected loadout options</line>
+	   <line>A few pre defined loadout options are available in the F-18C Menu for you to use.</line>
+	    <line>Selecting any will add the appropriate weapons and tanks to the aircraft.</line>
+		 <line>Due a small bug in the system you still need to manually reselect any 1 item from the Equipment menu to have the correct payload weight calculated..</line>
+		  <line></line>
+		   <line>Cannon.</line>
+		    <line>The cannon carries 520 rounds of ammo only. This can only be reloaded on the ground from the F-18C Menu.</line>
+    </help>
+
+
+<menubar include="Dialogs/F15-menu.xml"/>
+</sim>
+
+<payload>
+        <d-config>
+            <full_damage_dist_m type="double">3</full_damage_dist_m>
+            <use_hitpoints_instead_of_failure_modes_bool type="bool">false</use_hitpoints_instead_of_failure_modes_bool>
+            <hp_max type="double">90</hp_max>
+            <hitable_by_air_munitions type="bool">true</hitable_by_air_munitions>
+            <hitable_by_cannon type="bool">true</hitable_by_cannon>
+            <is_fleet type="bool">false</is_fleet>
+            <rwr_to_screen type="bool">true</rwr_to_screen>
+            <rwr_audio_extended type="bool">true</rwr_audio_extended>
+            <tacview_supported type="bool">false</tacview_supported>
+            <m28_auto type="bool">false</m28_auto>
+            <mlw_max type="double">0</mlw_max>
+            <auto_flare_caller type="bool">false</auto_flare_caller>
+		</d-config>		
+	  <armament>
+	              <flares type="int">0</flares>
+            <enable-craters type="bool">true</enable-craters>
+            <MLW-bearing type="double">0</MLW-bearing>
+            <MLW-count type="int">0</MLW-count>
+            <MLW-launcher type="string"></MLW-launcher>
+            <MAW-bearing type="double">0</MAW-bearing>
+            <MAW-active type="bool">false</MAW-active>
+            <MAW-semiactive type="bool">false</MAW-semiactive>
+            <msg type="bool">true</msg>
+            <spike type="bool">false</spike>
+            <models type="string">Aircraft/F-18C/Models/emesary/</models>
+        </armament>
+    </payload>
+
+
+<systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+      <autopilot>
+        <path>Aircraft/F-18C/System/Autopilot.xml</path>
+      </autopilot>
+  <refuel>
+  <type>probe</type>
+  <serviceable type="bool">true</serviceable>
+ </refuel>
+    
+    </systems> 
+
+<controls>
+<!-- set up control properties for YASim -->
+   <trigger type="bool">false</trigger>
+      <master-arm type="bool">true</master-arm>
+      <stick-selector type="int">0</stick-selector><!-- 0=OFF, 1=GUN, 2=A/A, 3=A/G -->
+      <position-norm type="int">1</position-norm>
+    <armament>
+<pos>
+<lat type="float">0</lat>
+<lon type="float">0</lon>
+<alt type="float">0</alt>
+<hdg type="float">0</hdg>
+<ptch type="float">0</ptch>
+<speed type="float">0</speed>
+</pos>
+
+
+<status type="int">0</status>
+
+
+
+
+      <missile-trigger type="float">0</missile-trigger>
+
+<rdt type="int">0</rdt> <!--Right Drop Tank Show/Hide-->
+<ldt type="int">0</ldt> <!--Left Drop Tank Show/Hide-->
+<extpylons type="int">0</extpylons> <!--External Pylons for droptanks Show/Hide-->
+    <!--
+      note :
+        Missile property. the value here doesn't really count, beacause it's reloaded
+        by a Nasal file Loading_missiles.nas for each missile. Anyway this is nessecary for variable declaration
+    -->
+    <selected-weapon-digit type="int">0</selected-weapon-digit>
+    <selected-weapon type="string">none</selected-weapon>
+    <missile>
+<eject>
+      <current-pylon type="int"> 0 </current-pylon>
+</eject>
+      <flareres type="double"> 0.80 </flareres>
+      <name>None_press_m</name>
+      <type-id type="int">57</type-id>
+      <address>Aircraft/SU-27SK/Models/Stores/Missiles/R-27R/R-27R.xml</address>
+      <addressNoSmoke>Aircraft/SU-27SK/Models/Stores/Missiles/R-27R/R-27R.xml</addressNoSmoke>
+      <addressExplosion>Aircraft/SU-27SK/Models/Effects/MissileExplosion/explosion.xml</addressExplosion>
+      <count type="int">0</count>
+      <nearest-target type="int"> -1 </nearest-target>
+      <sound-on-off type="bool">false</sound-on-off>
+      <sound-volume type="double"> 0.12 </sound-volume>
+      <target-range-nm type="double"> 0 </target-range-nm>
+      <max-detection-rng-nm type="int"> 45 </max-detection-rng-nm>
+      <!-- ' not real impact yet-->
+      <fov-deg type="int"> 25 </fov-deg>
+      <!-- ' seeker optical FOV -->
+      <detection-fov-deg type="int"> 60 </detection-fov-deg>
+      <!-- ' search pattern diameter (rosette scan) -->
+      <track-max-deg type="int"> 110 </track-max-deg>
+      <!-- ' seeker max total angular rotation -->
+      <max-g type="int"> 100 </max-g>
+      <!-- ' in turn -->
+      <thrust-lbs type="double"> 300 </thrust-lbs>
+      <!-- ' guess -->
+      <thrust-duration-sec type="int"> 30 </thrust-duration-sec>
+      <!-- ' Mk.36 Mod.7,8 -->
+      <weight-launch-lbs> 216 </weight-launch-lbs>
+      <weight-warhead-lbs> 30 </weight-warhead-lbs>
+      <drag-coeff type="double"> 0.05 </drag-coeff>
+      <!-- ' guess - original 0.05-->
+      <drag-area type="double"> 0.043 </drag-area>
+      <!-- ' sq ft -->
+      <maxExplosionRange type="int"> 200 </maxExplosionRange>
+      <!--
+        note :
+          due to the code, more the speed is important, more we need to have this
+          figure high
+      -->
+      <maxspeed type="double"> 4 </maxspeed>
+      <!-- ' in Mach -->
+      <life> 60 </life>
+      <sdspeed> 60 </sdspeed>
+      <!--
+        note :
+          "Fox1" for guided by the aircraft radar (semi active) AIM7,
+          "Fox2" for infrared AIM9,
+          "Fox3" for intern missile Radar AIM120, AIM54 
+          "A/G" air to ground
+      -->
+      <fox>Fox 2</fox>
+      <isbomb>0</isbomb>
+      <chute>0</chute>
+      <!--
+        note :
+          if the missile fall before thrust start or if there is some kind of "rail"
+      -->
+      <rail type="bool">true</rail>
+      <!--
+        note :
+          for cruise missile, in feet.0 is off.below 10000 feet is terrain following
+      -->
+      <cruise_alt type="int"> 0 </cruise_alt>
+      <current-pylon type="int"> 0 </current-pylon>
+<pos2>
+      <a1 type="double"> 0 </a1>
+      <a2 type="double"> 0 </a2>
+      <a3 type="double"> 0 </a3>
+      <a4 type="double"> 0 </a4>
+      <a5 type="double"> 0 </a5>             <!--Optional Missile View-->
+      <a6 type="double"> 0 </a6>  <!--Used for setting the camera to the ejection seat-->
+      <a7 type="double"> 0 </a7>           <!--See Misc.nas to see how it works-->
+      <a8 type="double"> 0 </a8>               
+      <a9 type="double"> 0 </a9>
+      <a10 type="double"> 0 </a10>
+</pos2>  
+
+    </missile>
+      <station n="0">
+        <release type="bool">false</release>
+      </station>
+      <station n="1">
+        <release type="bool">false</release>
+      </station>
+      <station n="2">
+        <release type="bool">false</release>
+      </station>
+      <station n="3">
+        <release type="bool">false</release>
+      </station>
+      <station n="4">
+        <release type="bool">false</release>
+      </station>
+      <station n="5">
+        <release type="bool">false</release>
+      </station>
+      <station n="6">
+        <release type="bool">false</release>
+      </station>
+	   <station n="7">
+        <release type="bool">false</release>
+      </station>
+	   <station n="8">
+        <release type="bool">false</release>
+      </station>
+	   <station n="9">
+        <release type="bool">false</release>
+      </station>
+	   <station n="10">
+        <release type="bool">false</release>
+      </station>
+	   <station n="11">
+        <release type="bool">false</release>
+      </station>
+	   <station n="12">
+        <release type="bool">false</release>
+      </station>
+         <station n="13">
+        <release type="bool">false</release>
+      </station>
+      <station n="14">
+        <release type="bool">false</release>
+      </station>
+	   <station n="15">
+        <release type="bool">false</release>
+      </station>
+	   <station n="16">
+        <release type="bool">false</release>
+      </station>
+	   <station n="17">
+        <release type="bool">false</release>
+      </station>
+	   <station n="18">
+        <release type="bool">false</release>
+      </station>
+	   <station n="19">
+        <release type="bool">false</release>
+      </station>
+	   <station n="20">
+        <release type="bool">false</release>
+      </station>
+    </armament>
+<gear>
+      <brake-parking type="double">1.0</brake-parking>
+    </gear>
+  </controls>
+
+  <environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+<input>
+    <keyboard include="Nasal/keyboard.xml"/>
+</input>
+
+
+<consumables>
+    <fuel>
+      <tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">519</level-gal_us>
+      </tank>
+      <tank n="1">
+        <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">500</level-gal_us>
+      </tank>
+      
+      <tank n="2">
+       <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">300</level-gal_us>
+      </tank>
+      <tank n="3">
+       <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">300</level-gal_us>
+      </tank>
+	 
+      <tank n="4">
+        <name>Left-DropTank</name>
+        <selected type="bool">false</selected>
+      </tank>
+	   <tank n="5">
+        <name>Centre-DropTank</name>
+        <selected type="bool">false</selected>
+      </tank>
+	   <tank n="6">
+        <name>Right-DropTank</name>
+        <selected type="bool">false</selected>
+      </tank>
+	  
+    </fuel>
+  </consumables>
+
+ <ai>
+    <closest>
+      <callsign type="string">   0 </callsign>
+      <range type="double">     -2 </range>
+      <heading type="int">       0 </heading>
+      <bearing type="int">       0 </bearing>
+      <altitude type="int">      0 </altitude>
+      <speed type="int">         0 </speed>
+      <longitude type="double">  0 </longitude>
+      <latitude type="double">   0 </latitude>
+    </closest>
+  </ai>
+
+
+<engines>
+		<engine n="0">
+			<running>true</running>
+			<augmentation type="int">0</augmentation>	
+		</engine>
+		<engine n="1">
+			<running>true</running>
+			<augmentation type="int">0</augmentation>	
+		</engine>
+</engines>
+
+ <instrumentation>
+        <datalink>
+            <data type="int">0</data>
+            <power type="bool">true</power>
+            <channel type="int">1234</channel>
+            <power_prop type="string">/instrumentation/datalink/power</power_prop>
+            <channel_prop type="string">instrumentation/datalink/channel</channel_prop>
+            <receive_period type="double">1</receive_period>
+        </datalink>
+
+
+<rwr>
+      <display-lighting-intens type="double">0.4</display-lighting-intens>
+      <symbology-lighting-intens type="double">1</symbology-lighting-intens>
+    </rwr>
+
+    <enav><selected type="int">3</selected></enav>
+
+<radar>
+
+  <range type="int" archive="y">40</range>
+  <range-factor type="double" archive="n">0.001888</range-factor>
+  <minimized type="bool" archive="y">false</minimized>
+  <selected type="int">2</selected>
+  <lock type="int">0</lock>
+  <lock2 type="int">0</lock2>
+  <threat-spotted type="int">0</threat-spotted> <!--for lockhelper.nas-->
+      <!-- inicio en pruebas -->
+  <enabled type="bool">0</enabled>
+  <grid type="bool">1</grid>
+  <az-field type="double">120</az-field>
+
+  <range type="double">150</range>
+  <range-selected type="double">50</range-selected>
+  <radar2-range type="double">150</radar2-range>
+  <display-rdr type="bool">true</display-rdr>
+  <radar-standby type="int">0</radar-standby>
+<mode>
+  <rws type="bool">true</rws>
+  <tws-auto type="bool">false</tws-auto>
+    <main type="int">0</main> <!--0 TWS 1 RWS 2 Custom-->
+</mode>
+
+</radar> 
+
+
+  <radar2>
+  <direction type="double">0</direction>
+	<lockmarker type="double">0</lockmarker>
+   <sweep-width-m type="double">0.0844</sweep-width-m>
+   <range-width-m type="double">0.0846</range-width-m>
+   <radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+   <hud-eye-dist-m type="double">0.6705</hud-eye-dist-m>
+   <hud-radius-m type="double">0.071</hud-radius-m>
+   <sweep-speed type="double">1.5</sweep-speed>
+   <!--RWS Mode to start-->
+   <sweep-display-width type="double">0.0846</sweep-display-width>
+   <hud>
+    <target type="bool">1</target>
+   </hud>
+   <targets>
+    <aircraft n="0">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="1">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="2">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="3">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="4">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="5">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="6">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="7">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+   </targets>
+  </radar2>
+  
+    <terrain-radar>
+      <hi-elev>
+        <alt-ft type="double">  -9999.9 </alt-ft>
+        <lat-deg type="double"> -9999.9 </lat-deg>
+        <lon-deg type="double"> -9999.9 </lon-deg>
+        <dist-m type="double">  -9999.9 </dist-m>
+        <collision-status type="string">initialised</collision-status>
+      </hi-elev>
+      <settings>
+        <mode type="string">extend</mode>
+        <state type="string">off</state>
+        <range-m type="double">2500</range-m>
+        <step-m type="double">250</step-m>
+        <max-climb-rate-fps type="double">120</max-climb-rate-fps>
+        <hi-elev-markers type="bool">false</hi-elev-markers>
+      </settings>
+    </terrain-radar>
+	
+	 <efis>
+
+			<ecam>
+					<display-mode type="string">FUEL</display-mode>
+			</ecam>
+			<nd>
+					<display-mode type="string">VOR</display-mode>
+					<display-mode-knob type="int">2</display-mode-knob>
+					<display-range type="int">20</display-range>
+				
+			</nd>
+			<input>
+				<vor-adf-1 type="int">1</vor-adf-1>
+				<vor-adf-2 type="int">1</vor-adf-2>
+				<CSTR type="bool">1</CSTR>
+				<WPT type="bool">1</WPT>
+				<VORD type="bool">1</VORD>
+				<NDB type="bool">1</NDB>
+				<ARPT type="bool">1</ARPT>
+				<WX type="bool">1</WX>
+				<TERR type="bool">1</TERR>
+				<TRAF type="bool">1</TRAF>
+				<taxi type="bool">1</taxi>
+			</input>
+
+		
+		</efis>
+  </instrumentation>
+
+<nasal>
+
+	 <notifications>
+            <file>Aircraft/F-18C/Nasal/ArmamentNotification.nas</file>
+            <file>Aircraft/F-18C/Nasal/GeoBridgedTransmitter.nas</file>
+        </notifications>
+
+         <vector>
+            <file>Aircraft/F-18C/Nasal/vector.nas</file>
+        </vector>
+
+                        <rcs>
+            <!-- must be before radar -->
+            <file>Aircraft/F-18C/Nasal/rcs_mand.nas</file>
+            <file>Aircraft/F-18C/Nasal/rcs.nas</file>
+        </rcs>
+
+
+
+
+<doors>
+<file>Aircraft/F-18C/Nasal/doors.nas</file>
+</doors>
+
+
+		<misc>
+			<file>Aircraft/F-18C/Nasal/misc.nas</file>
+		</misc>
+
+<F-18D>
+
+<file>Aircraft/F-18C/Nasal/doors.nas</file>
+<file>Aircraft/F-18C/Nasal/fuelhose.nas</file>
+<file>Aircraft/F-18C/Nasal/liveries.nas</file>
+
+</F-18D>
+<F-18D_fuel>
+   <file>Aircraft/F-18C/Nasal/fuel.nas</file>
+  </F-18D_fuel>
+
+
+    <guns>
+      <file>Aircraft/F-18C/Nasal/weapons.nas</file>
+      <file>Aircraft/F-18C/Nasal/revi.nas</file>
+    </guns>
+
+<radar2>
+<file>Aircraft/F-18C/Nasal/radar2.nas</file>
+</radar2>
+<rwr>
+ <file>Aircraft/F-18C/Models/D/Interior/Panel/Instruments/Radar/rwr.nas</file>
+</rwr> 
+ <hud>
+      <file>Aircraft/F-18C/Nasal/MiscRwr.nas</file>
+    </hud>
+<radardist>
+<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+</radardist>
+  
+	
+	<lights>
+		   <file>Aircraft/F-18C/Nasal/lights.nas</file>
+		</lights>
+
+<terrain-map>
+ 
+<file>Aircraft/F-18C/Nasal/terrain-map.nas</file>
+ 
+</terrain-map>
+
+<low>
+<file>Aircraft/F-18C/Nasal/low.nas</file>
+</low>
+
+
+<aar> 
+<file>Aircraft/Generic/aar.nas</file>
+</aar>
+
+<damage>
+            <file>Aircraft/F-18C/Nasal/damage.nas</file>
+        </damage>
+
+
+  <!--
+  <emu>
+   <file>Aircraft/F-18C/Nasal/emu.nas</file>
+  </emu> -->
+ <lights>
+      <file>Aircraft/F-18C/Nasal/Lights.nas</file>
+    </lights>
+
+<load>
+      <file>Aircraft/F-18C/Nasal/ext_stores.nas</file>
+    </load>
+    <radardist>
+      <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+    </radardist>
+<datalink>
+<file>Aircraft/F-18C/Nasal/datalink.nas</file>
+</datalink>
+    <radar>
+      <file>Aircraft/F-18C/Nasal/radar2.nas</file> 
+    </radar>
+
+        <lockhelper>
+            <file>Aircraft/F-18C/Nasal/lockhelper.nas</file>
+        </lockhelper>
+
+		
+    <WCS><file>Aircraft/F-18C/Nasal/wcs-helper.nas</file> </WCS>
+
+
+        <rwrs>
+            <file>Aircraft/F-18C/Nasal/rwr.nas</file>
+        </rwrs>
+        <radar_system>
+           	<file>Aircraft/F-18C/Nasal/radar-system-database.nas</file>
+            <file>Aircraft/F-18C/Nasal/radar-system.nas</file>
+            <file>Aircraft/F-18C/Nasal/rwr-only.nas</file>
+        </radar_system>
+
+        <armament>
+      <file>Aircraft/F-18C/Nasal/missile-code.nas</file>
+</armament>  <!--Only for RWR-->
+
+    <missile>
+      <file>Aircraft/F-18C/Nasal/weapons/missile.nas</file>
+      <file>Aircraft/F-18C/Nasal/weapons/Loading_Missiles.nas</file>
+      <file>Aircraft/F-18C/Nasal/weapons/missile_GroundTargeting.nas</file>
+    </missile>
+
+    <m2000_load>
+      <file>Aircraft/F-18C/Nasal/weapons/ext_stores.nas</file>
+    </m2000_load>
+
+    <!--Only for RWR-->
+    <wep>
+      <file>Aircraft/F-18C/Nasal/weaponstation.nas</file>
+    </wep>
+</nasal>
+
+
+</PropertyList>
+
