@@ -2,9 +2,6 @@
 <!-- $Id$ -->
 <!--
   MD500 multiplayer passenger view.
-
-  Copyright (C) 2009  Anders Gidenstam  (anders(at)gidenstam.org)
-  This file is licensed under the GPL license version 2 or later.
 -->
 <!--
   Usage: fgfs - -prop:/sim/remote/pilot-callsign="remote pilot callsign" - -aircraft=Fi-156-passenger
@@ -12,6 +9,17 @@
 <PropertyList>
 
  <sim>
+ <multiplay n="0">
+      <chat_display>1</chat_display>
+      <generic n="0">
+	
+
+      <int n="1" alias="/instrumentation/radar/range"/>
+      <float n="3" type="double" alias="/orientation/alpha-deg"/>
+      <string n="3" alias="/controls/AI/rdrcallsign"/>
+      </generic>
+    </multiplay>				
+
 
   <description>FA-18D Back Seat(YASIM)</description>
   <author>Mathias Froehlich, Algernon</author>
@@ -107,33 +115,107 @@
 
     <enav><selected type="int">3</selected></enav>
 
-    <radar>
-      <range type="int" archive="y">20</range>
-      <range-factor type="double" archive="n">0.001888</range-factor>
-      <minimized type="bool" archive="y">false</minimized>
-      <selected type="int">3</selected>
+<radar>
+
+  <range type="int" archive="y">40</range>
+  <range-factor type="double" archive="n">0.001888</range-factor>
+  <minimized type="bool" archive="y">false</minimized>
+  <selected type="int">2</selected>
+  <lock type="int">0</lock>
+  <lock2 type="int">0</lock2>
+  <threat-spotted type="int">0</threat-spotted> <!--for lockhelper.nas-->
       <!-- inicio en pruebas -->
-      <enabled type="bool">true</enabled>
-      <az-field type="double">140</az-field>
-      <range type="double">80</range>
-      <range-selected type="double">20</range-selected>
-      <radar2-range type="double">80</radar2-range>
-      <display-rdr type="bool">true</display-rdr>
-      <radar-standby type="int">0</radar-standby>
-      <mode>
-        <rws type="bool">true</rws>
-        <tws-auto type="bool">false</tws-auto>
-      </mode>
-    </radar>
- 
-    <radar2>
-      <sweep-width-m type="double">0.0844</sweep-width-m>
-      <range-width-m type="double">0.0846</range-width-m>
-      <radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
-      <hud-eye-dist-m type="double">0.766</hud-eye-dist-m>
-      <hud-radius-m type="double">0.071</hud-radius-m>
-      <hud-vertical-offset-m type="double">-0.025</hud-vertical-offset-m>
-    </radar2>
+  <enabled type="bool">0</enabled>
+  <grid type="bool">1</grid>
+  <az-field type="double">120</az-field>
+
+  <range type="double">150</range>
+  <range-selected type="double">50</range-selected>
+  <radar2-range type="double">150</radar2-range>
+  <display-rdr type="bool">true</display-rdr>
+  <radar-standby type="int">0</radar-standby>
+<mode>
+  <rws type="bool">true</rws>
+  <tws-auto type="bool">false</tws-auto>
+    <main type="int">0</main> <!--0 TWS 1 RWS 2 Custom-->
+</mode>
+
+</radar> 
+
+
+  <radar2>
+  <direction type="double">0</direction>
+	<lockmarker type="double">0</lockmarker>
+   <sweep-width-m type="double">0.0844</sweep-width-m>
+   <range-width-m type="double">0.0846</range-width-m>
+   <radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+   <hud-eye-dist-m type="double">0.6705</hud-eye-dist-m>
+   <hud-radius-m type="double">0.071</hud-radius-m>
+   <sweep-speed type="double">1.5</sweep-speed>
+   <!--RWS Mode to start-->
+   <sweep-display-width type="double">0.0846</sweep-display-width>
+   <hud>
+    <target type="bool">1</target>
+   </hud>
+   <targets>
+    <aircraft n="0">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="1">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="2">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="3">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="4">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="5">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="6">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="7">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+   </targets>
+  </radar2>
 
     <terrain-radar>
       <hi-elev>
@@ -181,17 +263,16 @@
 		
 		</efis>
   </instrumentation>
-
+<input>
+    <keyboard include="Nasal/keyboard.xml"/>
+</input>
  <nasal>
 
  
- 
- <radar>
-<file>Aircraft/F-18C/Nasal/radar.nas</file> 
-    </radar>
-<radar2>
+
+<radar>
 <file>Aircraft/F-18C/Nasal/radar2.nas</file>
-</radar2>
+</radar>
 <rwr>
  <file>Aircraft/F-18C/Models/D/Interior/Panel/Instruments/Radar/rwr.nas</file>
 </rwr> 
@@ -214,7 +295,14 @@
   <dual_control>
    <file>Aircraft/Generic/DualControl/copilot-dual-control.nas</file>
   </dual_control>
-  
+
+
+  <copilot>
+      <file>Aircraft/F-18C/Nasal/copilot.nas</file>
+</copilot>
+      <wep>
+      <file>Aircraft/F-18C/Nasal/weaponstation.nas</file>
+    </wep>
  </nasal>
 
 </PropertyList>

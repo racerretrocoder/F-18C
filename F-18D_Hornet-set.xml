@@ -1541,11 +1541,24 @@
     <m2000_load>
       <file>Aircraft/F-18C/Nasal/weapons/ext_stores.nas</file>
     </m2000_load>
-
+  <dual_control_tools>
+   <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
+  </dual_control_tools>
+  <aircraft_dual_control>
+   <file>Aircraft/F-18C/Nasal/f18-dual-control.nas</file>
+  </aircraft_dual_control>
+  <dual_control>
+   <file>Aircraft/Generic/DualControl/pilot-dual-control.nas</file>
+  </dual_control>
     <!--Only for RWR-->
     <wep>
       <file>Aircraft/F-18C/Nasal/weaponstation.nas</file>
     </wep>
+
+<pilot>
+      <file>Aircraft/F-18C/Nasal/pilot.nas</file>
+</pilot>
+
 </nasal>
 
 

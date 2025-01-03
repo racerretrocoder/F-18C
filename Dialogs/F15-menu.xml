@@ -153,6 +153,40 @@
             <dialog-name>flightlog</dialog-name>
         </binding>
 </item>
+
+      <item n="19">
+        <label>Select MP-Copilot To control your radar</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            dual_control_tools.
+            copilot_dialog.show(aircraft_dual_control.copilot_type);
+          </script>
+        </binding>
+      </item>
+
+     <item n="20">
+        <label>Enable Copilot Radar Control</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            setprop("/sim/controls/copilot-mode", 1);
+            pilot.start();
+          </script>
+        </binding>
+      </item>
+         <item n="21">
+        <label>Disable Copilot Radar Control</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            setprop("/sim/controls/copilot-mode", 0);
+            pilot.stop();
+          </script>
+        </binding>
+      </item>
+
+
     </menu>
   
          
